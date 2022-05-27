@@ -1,0 +1,46 @@
+<div class="col-md-4 mx-auto">
+  <div class="card">
+    <div class="card-header">
+      <h3>Editar tarea</h3>
+    </div>
+    <div class="card-body justify-content-center">
+      <form class="" action="/tareas/editar/{{tasks._id}}?_method=put" method="post">
+        <input type="hidden" name="_method" value="put">
+        <h3>Titulo</h3>
+        <div class="form-group">
+          <input type="text" name="title" class="form-control" value="{{tasks.title}}">
+        </div>
+        <h3>Detalles</h3>
+        <div class="form-group">
+          <textarea name="description" rows="8" cols="80" class="form-control">{{tasks.description}}</textarea>
+        </div>
+        {{#if admin}}
+        <h4>Usuarios a cargo</h4>
+        <div class="form-group">
+          <input type="text" name="usersIncharge" value="{{tasks.usersIncharge}}">
+        </div>
+        {{/if}}
+        <h4>Creada en:</h4>
+        <div class="form-group">
+          <span>{{tasks.assignDate}}</span>
+        </div>
+        <h4>Esperada para el dia</h4>
+        <div class="form-group">
+          <span>{{tasks.deadline}}</span>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary btn-block">
+            Guardar cambios
+          </button>
+        </div>
+
+      </form>
+      <form action="/tareas/terminar/{{tasks._id}}" method="post" class="mt-4">
+        <button type="submit" name="button" class="btn btn-primary">Finalizar tarea</button>
+      </form>
+
+    </div>
+
+  </div>
+
+</div>

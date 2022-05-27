@@ -1,0 +1,18 @@
+<div class="row">
+  {{#each usuarios}}
+    <div class="col-4">
+      <img class="card-img-top" src="/uploads/{{image}}" alt="Card image cap" style="width: 200px; height: 200px; border-radius:80%;">
+      <div class="card-body">
+        <h1>{{name}}</h1>
+        <h4>{{role}}</h4>
+        <p class="card-text">{{email}}</p>
+        <div class="form-group mt-3">
+          <form action="/usuarios/delete/{{_id}}?_method=DELETE" method="post">
+            <input type="hidden" name="_method" value="DELETE">
+            <button type="submit" name="button" class="btn btn-danger btn-block btn-sm">Eliminar usuario</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  {{/each}}
+</div>

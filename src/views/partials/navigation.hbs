@@ -1,0 +1,46 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">Servicepro</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        {{#if user}}
+        <li class="nav-item">
+          <a class="nav-link" href="/tareas">Tareas</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/tareas/nueva-tarea">Nueva tarea</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/usuarios/signup">Registrar nuevo empleado</a>
+        </li>
+         <li>
+           <a class="nav-link" href="/usuarios">Todos los usuarios</a>
+         </li>
+         <li>
+           <a class="nav-link" href="/tareas/tareas-terminadas">Tareas terminadas</a>
+         </li>
+         <li>
+           <a class="nav-link" href="/tareas/tareas-archivadas">Tareas archivadas</a>
+         </li>
+         <li>
+           <a class="nav-link" href="/usuarios/logout">Cerrar sesion</a>
+         </li>
+        <ul class="">
+          <li class="nav-item">
+            <img src="/uploads/{{image}}" style="width: 40px; border-radius:25%;">
+            <a href="usuario">{{name}}</a>
+          </li>
+        </ul>
+      {{else}}
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/usuarios/signin">Iniciar sesion</a>
+        </li>
+      </ul>
+      {{/if}}
+    </div>
+  </div>
+</nav>

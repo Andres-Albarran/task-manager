@@ -1,0 +1,29 @@
+<div class="row">
+
+  {{#each finish}}
+  <div class="col-md-3">
+    <div class="card">
+      <img src="/uploads/{{img}}" alt="">
+      <div class="card-body">
+        <h1>{{title}}</h1>
+        <h3>Descripcion</h3>
+        <span>{{description}}</span>
+        <h3>Tarea asignada en:</h3>
+        <span>{{assignDate}}</span>
+        <h3>Tarea finalizada en:</h3>
+        <span>{{createdAt}}</span>
+        <h3>Esperada para el dia:</h3>
+        <span>{{deadline}}</span>
+        <h4>Usuarios que estuvieron a cargo</h4>
+        <span>{{usersIncharge}}</span>
+        <form action="/tareas/tareas-terminadas/{{_id}}" method="post" class="mt-4">
+          <button type="submit" name="button" class="btn btn-primary">Devolver</button>
+        </form>
+        <form action="/tareas/archivar/{{_id}}" method="post" class="mt-4">
+          <button type="submit" name="button" class="btn btn-primary">Archivar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  {{/each}}
+</div>

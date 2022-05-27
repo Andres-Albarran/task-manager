@@ -1,0 +1,28 @@
+  <div class="row">
+  {{#each tasks}}
+    <div class="card col-md-3">
+      <img src="/uploads/{{img}}" alt="">
+      <div class="card-body">
+        <h2 class="card-title d-flex justify-content-between align-items-center"> {{title}}
+          <a href="tareas/editar/{{_id}}">
+            <i class="fa fa-pencil"></i>
+          </a>
+        </h2>
+        <h3>Descripcion</h3>
+        <span>{{description}}</span>
+        <h4>Usuarios a cargo</h4>
+        <span>{{usersIncharge}}</span>
+        <h3>Fecha limite</h3>
+        <span>{{deadline}}</span>
+        <h3>Fecha en la que comenzo la tarea</h3>
+        <span>{{assignDate}}</span>
+          <div class="form-group mt-3">
+        <form action="/tareas/delete/{{_id}}?_method=DELETE" method="post">
+          <input type="hidden" name="_method" value="DELETE">
+          <button type="submit" name="button" class="btn btn-danger btn-block btn-sm">Eliminar tarea</button>
+        </form>
+      </div>
+    </div>
+    </div>
+  {{/each}}
+</div>
